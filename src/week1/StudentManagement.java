@@ -4,39 +4,45 @@ import java.util.HashSet;
 // Cau 2
 public class StudentManagement {
 	//cau 11
-	private static ArrayList<Student> students = new ArrayList<Student>(100);
+	private Student[] students = new Student[100];
+	private int numberOfStudent = 3;
+
 	//cau 9
-    public static boolean sameGroup(Student s1, Student s2) {
+    public boolean sameGroup(Student s1, Student s2) {
        return s1.getGroup().equals(s2.getGroup());
     }
 	//cau 12
-    public static void studentsByGroup() {
-       HashSet<String> Class = new HashSet<String>();
-	    for(Student st: students) {
-	    	Class.add(st.getGroup());
+    public void studentsByGroup() {
+       HashSet<String> StudentClass = new HashSet<String>();
+	    for(int i=0;i<numberOfStudent;++i) {
+	    	StudentClass.add(students[i].getGroup());
 	    }
-	    for(String Group : Class) {
+	    for(String Group : StudentClass) {
 	    	System.out.println("Lop"+ Group);
-	    	for(Student st:students) {
-	    		if(st.getGroup().equals(Group)) {
-	    			System.out.println(st.getInfo());
+	    	for(int i=0;i<numberOfStudent;++i) {
+	    		if(students[i].getGroup().equals(Group)) {
+	    			System.out.println(students[i].getInfo());
 	    		}
 	    	}
 	    }
     }
 	//cau 13
-	public static void removeStudent(String id) {
-       int index = -1;
-		for(int i=0;i<students.size();++i) {
-			if(students.get(i).getID().equals(id)) {
+	public void removeStudent(String id) {
+		int index = -1;
+		for(int i=0;i<numberOfStudent;++i) {
+			if(students[i].getID().equals(id)) {
 				index = i;
 				break;
 			}
 		}
-		if(index!=-1)	students.remove(index);
+		if(index!=-1){
+			students[index]=null;
+			for(int i = index;i<2;i++) {
+				students[i] = students[i+1];
+			}
+		}
 		else System.out.println("Invalid To Remove Student By This Id");
     }
-
     public static void main(String[] args) {
 		Student Student1 = new Student();
 		Student1.setName("DAO QUANG HUY");
@@ -49,14 +55,17 @@ public class StudentManagement {
 		Student Student2 = new Student();
 		Student Student3 = new Student("NGUYEN MANH HUNG","17024567","nguyenhung@vnu.edu.vn");
 		Student Student4 = new Student(Student2);
-		students.add(Student1);
-		students.add(Student2);
-		students.add(Student3);
-		students.add(Student4);
-		removeStudent("17020166");
-		studentsByGroup();
+
+		StudentManagement sm = new StudentManagement();
+
+		sm.students[0]=Student1;
+		sm.students[1]=Student2;
+		sm.students[2]=Student3;
+		sm.students[3]=Student4;
+		sm.removeStudent("17020166");
+		sm.studentsByGroup();
 		//cau 10
-		if(sameGroup(Student1,Student2))	System.out.println("YES");
+		if(sm.sameGroup(Student1,Student2))	System.out.println("YES");
 		else System.out.println("NO");
     }
 }

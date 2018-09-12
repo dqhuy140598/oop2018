@@ -42,7 +42,6 @@ public class Student{
 		this.studentGroup ="INT22041";
 		this.studentEmail ="uet@vnu.edu.vn";
     }
-
     /**
      * Constructor 2
      * @param n
