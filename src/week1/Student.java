@@ -1,3 +1,4 @@
+package week1;
 // Cau 1
 public class Student{
 	// Cau 3
@@ -67,7 +68,7 @@ public class Student{
     }
 	// Cau 5
     String getInfo() {
-        String temp ="";
+        String temp = "";
 		temp = temp + '\n' + this.studentName +'\n'+ this.studentGroup +'\n'+ this.studentID +'\n'+ this.studentEmail;
 		return temp;
     }

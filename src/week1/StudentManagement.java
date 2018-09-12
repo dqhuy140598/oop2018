@@ -1,3 +1,4 @@
+package week1;
 import java.util.ArrayList;
 import java.util.HashSet;
 // Cau 2
@@ -6,7 +7,7 @@ public class StudentManagement {
 	private static ArrayList<Student> students = new ArrayList<Student>(100);
 	//cau 9
     public static boolean sameGroup(Student s1, Student s2) {
-       return s1.getGroup()== s2.getGroup();
+       return s1.getGroup().equals(s2.getGroup());
     }
 	//cau 12
     public static void studentsByGroup() {
@@ -17,7 +18,7 @@ public class StudentManagement {
 	    for(String Group : Class) {
 	    	System.out.println("Lop"+ Group);
 	    	for(Student st:students) {
-	    		if(st.getGroup()==Group) {
+	    		if(st.getGroup().equals(Group)) {
 	    			System.out.println(st.getInfo());
 	    		}
 	    	}
@@ -27,7 +28,7 @@ public class StudentManagement {
 	public static void removeStudent(String id) {
        int index = -1;
 		for(int i=0;i<students.size();++i) {
-			if(students.get(i).getID()==id) {
+			if(students.get(i).getID().equals(id)) {
 				index = i;
 				break;
 			}
