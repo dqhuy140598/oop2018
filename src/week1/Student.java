@@ -59,7 +59,7 @@ public class Student{
      * Constructor 3
      * @param s
      */
-	 public Student(Student s){
+    Student(Student s){
 		this.studentName = s.studentName;
 		this.studentGroup =s.studentGroup;
 		this.studentID = s.studentID;
