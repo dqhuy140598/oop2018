@@ -9,7 +9,8 @@ public class StudentManagement {
 
 	//cau 9
     public boolean sameGroup(Student s1, Student s2) {
-       return s1.getGroup().equals(s2.getGroup());
+		if(s1.getGroup()==null || s2.getGroup()==null)	return false;
+    	return s1.getGroup().equals(s2.getGroup());
     }
 	//cau 12
     public void studentsByGroup() {
@@ -18,7 +19,7 @@ public class StudentManagement {
 	    	StudentClass.add(students[i].getGroup());
 	    }
 	    for(String Group : StudentClass) {
-	    	System.out.println("Danh sach sinh vien lop"+ Group);
+	    	System.out.print("*Danh sach sinh vien lop"+ Group);
 	    	for(int i=0;i<numberOfStudent;++i) {
 	    		if(students[i].getGroup().equals(Group)) {
 	    			System.out.println(students[i].getInfo());
@@ -38,8 +39,9 @@ public class StudentManagement {
 		if(index!=-1){
 			students[index]=null;
 			for(int i = index;i<numberOfStudent-1;i++) {
-				students[i] = students[i+1];
+				students[i] = students[i + 1];
 			}
+			students[numberOfStudent-1]=null;
 			numberOfStudent--;
 			System.out.println("Delete Successfully");
 		}
@@ -51,8 +53,8 @@ public class StudentManagement {
 		Student1.setGroup("INT22042");
 		Student1.setID("17020165");
 		Student1.setEmail("daoquanghuy.uet.140598@gmail.com");
-		System.out.println(Student1.getName());
-		System.out.println(Student1.getInfo());
+	/*	System.out.println(Student1.getName());
+		System.out.println(Student1.getInfo());*/
 		// cau 8
 		Student Student2 = new Student();
 		Student Student3 = new Student("NGUYEN MANH HUNG","17024567","nguyenhung@vnu.edu.vn");
@@ -64,6 +66,7 @@ public class StudentManagement {
 		StudentManagament1.students[1]=Student2;
 		StudentManagament1.students[2]=Student3;
 		StudentManagament1.students[3]=Student4;
+		StudentManagament1.studentsByGroup();
 		StudentManagament1.removeStudent("17020165");
 		StudentManagament1.studentsByGroup();
 		//cau 10

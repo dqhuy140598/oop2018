@@ -68,7 +68,7 @@ public class Student{
 	// Cau 5
     String getInfo() {
         String temp = "";
-		temp = temp + '\n' + this.studentName +'\n'+ this.studentGroup +'\n'+ this.studentID +'\n'+ this.studentEmail;
+		temp = temp +'\n'+ this.studentName +'\n'+ this.studentGroup +'\n'+ this.studentID +'\n'+ this.studentEmail+'\n';
 		return temp;
     }
 }
