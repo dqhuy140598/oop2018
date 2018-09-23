@@ -106,13 +106,15 @@ public class Fraction {
         else temp = Integer.toString(this.numarator)+ "/"+Integer.toString(this.denominator);
         return temp;
     }
-    public boolean equals(Fraction other){
-        Fraction temp = this.subtract(other);
-        if(temp.numarator==0) return true;
+    public boolean equals(Object obj){
+        Fraction temp = (Fraction)obj;
+        double result1  = 1.0*temp.numarator/temp.denominator;
+        double result2 = 1.0*this.numarator/this.denominator;
+        if(result1==result2)    return true;
         return false;
     }
     public static void main(String Args[]){
-        Fraction Result = new Fraction(1,0);
+        Fraction Result = new Fraction(1,2);
         Fraction other = new Fraction(0,3);
         Fraction Add = Result.add(other);
         Fraction Sub = Result.subtract(other);
