@@ -1,17 +1,36 @@
 package week2.task3;
 
 public class Task3 {
+    public static void main(String Args[]){
+        Teacher DangCaoCuong = new Teacher();
+        Cat Miu = new Cat();
+        Cars myCar = new Cars();
+        DangCaoCuong.HomeWork("object oriented programming");
+        Miu.Show();
+        myCar.changeUser("NGUYEN MANH HUNG");
+    }
 }
 class Teacher{
     private String Name;
     private String Address;
     private String Gender;
-    public void Teaching(){
-        System.out.println("You are leaning Object Oriented Programming");
+    private String Subject;
+    private static double figure = 3.5;
+    public double Salary(){
+        return figure * 1000000;
     }
-    public void Running(){System.out.println("The teacher is running");}
-    public void Playing(){System.out.println("The teacher is playing football");}
-
+    public void Teaching(){
+        System.out.println("the Teacher is teaching"+ this.Subject);
+    }
+    public void HomeWork(String subject){
+        System.out.println("the Student have to finish "+ subject);
+    }
+    public void setSubject(String subject){
+        this.Subject = subject;
+    }
+    public String getSubject(){
+        return this.Subject;
+    }
     public String getAddress() {
         return Address;
     }
@@ -68,9 +87,43 @@ class Cat{
         User = user;
     }
 }
-class LapTop{
+class Cars{
     private int Price;
     private String Name;
     private String Users;
+    public boolean BuyCar(int money){
+        if(money < this.Price)  return false;
+        return true;
+    }
+    public boolean isRangerRover(){
+        if(Name.equals("RangerRover"))  return true;
+        return true;
+    }
+    public void changeUser(String newUser){
+        System.out.println("The User now is "+ newUser);
+    }
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public int getPrice() {
+        return Price;
+    }
+
+    public void setPrice(int price) {
+        Price = price;
+    }
+
+    public String getUsers() {
+        return Users;
+    }
+
+    public void setUsers(String users) {
+        Users = users;
+    }
 }
 //TODO: khai báo 3 class tương ứng với 3 đối tượng thực tế ở dưới
