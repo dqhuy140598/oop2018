@@ -40,7 +40,7 @@ public class Week3 {
         if(BMI<18.5)    return "Thiếu cân";
         else if(BMI>=18.5 && BMI<=22.99)    return "Bình thường";
         else if(BMI >= 23 && BMI<=24.99)    return "Thừa cân";
-        return "Bèo phì";
+        return "Béo phì";
     }
     public static void main(String Args []){
 
