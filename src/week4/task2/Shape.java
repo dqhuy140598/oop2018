@@ -25,12 +25,17 @@ public class Shape {
     }
 
     /**
-     * phương thức chuyển sang xâu ký tự
-     * @return kiểu hình học mặc định ở đây là Shape.
+     * phương thức chuyển thuộc tính sang xâu ký tự
+     * @return xâu ký tự chứa thông tin các thuộc tính.
      */
-    public String toString(){
-        return "Shape";
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "color='" + color + '\'' +
+                ", filled=" + filled +
+                '}';
     }
+
     /**
      * phương thức lấy màu sắc
      * @return  màu sắc

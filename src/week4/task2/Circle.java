@@ -64,10 +64,12 @@ public class Circle extends Shape  {
 
     /**
      * ghi đè lại phương thức toString ở lớp cơ sở
-     * @return  mặc định ở đây là Circle
+     * @return  xâu chứa thuộc tính của lớp circle
      */
     @Override
     public String toString() {
-        return "Circle";
+        return "Circle{" +
+                "radius=" + radius +
+                '}';
     }
 }
