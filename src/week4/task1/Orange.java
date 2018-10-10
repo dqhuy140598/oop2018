@@ -31,7 +31,7 @@ public class Orange extends Fruit {
 
     /**
      * phương thức lấy tên loại cam
-     * @return  tên loại cam
+     * @return  trả về tên loại cam
      */
     public String getTypeOfOrange() {
         return typeOfOrange;
