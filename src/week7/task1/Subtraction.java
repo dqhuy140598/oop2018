@@ -1,7 +1,6 @@
 package week7.task1;
 
-public class Addition extends BinaryExpression{
-
+public class Subtraction extends BinaryExpression {
     /**
      * 2 thuộc tính là biểu thức bên trái và biểu thức bên phải
      */
@@ -12,11 +11,10 @@ public class Addition extends BinaryExpression{
      * @param left đối tượng Expression bên trái.
      * @param right đối tượng Expression bên phải.
      */
-    public Addition(Expression left, Expression right){
+    public Subtraction(Expression left, Expression right){
         this.left = left;
         this.right = right;
     }
-
     /**
      * phương thức trả về biểu thức bên trái
      * @return  biểu thức bên trái
@@ -25,7 +23,6 @@ public class Addition extends BinaryExpression{
     public Expression left() {
         return left;
     }
-
     /**
      * phương thức trả về biểu thức bên phải
      * @return  biểu thức bên phải.
@@ -34,14 +31,13 @@ public class Addition extends BinaryExpression{
     public Expression right(){
         return right;
     }
-
     /**
-     * phương thức tính giá trị biểu thức cộng
+     * phương thức tính giá trị biểu thức trừ
      * @return trả về giá trị biểu thức bên trái nhân với giá trị biểu thức bên phải.
      */
     @Override
     int Evaluate() {
-        return left.Evaluate() + right.Evaluate();
+        return left.Evaluate() - right.Evaluate();
     }
     /**
      * phương thức trả về xâu ký tự
@@ -49,6 +45,6 @@ public class Addition extends BinaryExpression{
      */
     @Override
     public String toString() {
-        return left.Evaluate() + " + "+ right.Evaluate();
+        return left.Evaluate() + " - "+ right.Evaluate();
     }
 }
