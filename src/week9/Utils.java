@@ -23,7 +23,7 @@ public class Utils {
             e.printStackTrace();
         }
         return null;
-    }
+    }//end
 
     /**
      * phương thức ghi một xâu ký tự mới vào file, nếu file đó đã có nội dung thì ta xóa nội dung cũ đi vào thêm nội dung mới vào
@@ -40,7 +40,7 @@ public class Utils {
         catch (Exception e){
             e.printStackTrace();
         }
-    }
+    }//end
 
     /**
      * phương thức ghi vào thêm vào file nội dung mới mà không xóa đi nội dung cũ
@@ -58,7 +58,7 @@ public class Utils {
         catch(Exception e){
             e.printStackTrace();
         }
-    }
+    }//end
 
     /**
      * phương thức tìm kiếm một file trong một thư mục
@@ -81,7 +81,7 @@ public class Utils {
             e.printStackTrace();
         }
         return null;
-    }
+    }//end
     public static void main(String args[]){
         String readFormFile = Utils.readContentFormFile("src/week9/Number.txt");
         System.out.println(readFormFile);
@@ -93,5 +93,5 @@ public class Utils {
         File searchFile = Utils.findFileByName("src/week9/","Number.txt");
         if(searchFile!=null)    System.out.println("File is exist");
         else System.out.println("File is not exist");
-    }
+    }//end
 }
