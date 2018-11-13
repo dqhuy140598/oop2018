@@ -33,6 +33,12 @@ public class Task1 {
         }
         return null;
     }
+
+    /**
+     * phương thức tìm kiếm một phương thức trong tệp
+     * @param name tên của phương thức cần tìm kiếm trong tệp
+     * @return  một xâu ký tự là mã nguồn của phương thức cần tìm kiếm, hoặc null nếu không tìm được xâu đó
+     */
     public String findFunctionByName(String name){
         Task1 task1 = new Task1();
         List<String> myFuctions =  task1.getAllFunctions("src/week9/Utils.java");
@@ -46,6 +52,6 @@ public class Task1 {
     }
     public static void main(String Args[]){
         Task1 task1 = new Task1();
-        System.out.println(task1.findFunctionByName("findFileByName(String,String)"));
+        System.out.println(task1.findFunctionByName("readContentFormFile(String)"));
     }
 }
